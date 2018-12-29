@@ -103,8 +103,7 @@ if ($m==2)
     echo
     "</select></td></tr>
 <tr>
-<td colspan=2 align=center><input type='submit' value='
-Сохранить'></td>
+<td colspan=2 align=center><input type='submit' value='Сохранить'></td>
 </tr>
 </table>
 </form>";

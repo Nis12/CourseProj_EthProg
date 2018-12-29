@@ -111,3 +111,11 @@ function consignmentdel($idconsignment)
     $handle=dbconnect();
     $handle->query($query);
 }
+function admins($login)
+{
+    $query =
+       "SELECT * FROM administrator WHERE login LIKE '$login'";
+    $handle=dbconnect();
+    $result = $handle->query($query);
+    return $result;
+}
