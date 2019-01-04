@@ -1,37 +1,63 @@
+<?php
+session_start();
+echo "
 <!DOCTYPE html>
-<html lang="ru">
+<html lang=\"ru\">
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">
     <title>Информация о кандидатах</title>
+    
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css'>
+    <script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js'></script>
+   <link rel='stylesheet' href='styles.css' type='text/css'>
+    
 </head>
 <body>
-<h1>Информация о кандидатах</h1>
-<p> <a href='index.php?p=1'>Кандидаты</a>&nbsp&nbsp
-    <a href='index.php?p=2'>Партии</a>&nbsp&nbsp
-    <a href='index.php?p=3&in=0'>Войти</a><p>
-<?php
-$p=$_REQUEST['p'];
-if (($p==0)||($p==1))
+
+<div id = 'wrap'>
+ <header>
+ <h1>Информация о предвыборной компании</h1>
+<br>
+</header>
+</div>
+<div id='left'>
+<ul>
+<li><p/> <a href='index.php?p=1' class='menu'>Кандидаты</a></li>
+<li><p/> <a href='index.php?p=2' class='menu'>Партии</a></li>";
+if ($_SESSION['admin'] > 0) {
+    echo "<li><p/><a href='index.php?p=3&in=1' class='menu'>Выйти</a></li>";
+} else {
+    echo "<li><p/><a href='index.php?p=3&in=0' class='menu'>Войти</a></li>";
+}
+echo "</ul>";
+if ($_SESSION['admin'] > 0) echo "<hr><p class='admin'>Режим администратора</p>";
+
+echo "</div><div id='mid' >";
+$p = $_REQUEST['p'];
+if (($p == 0) || ($p == 1))
     include_once 'candidate.php';
-elseif ($p==2)
+elseif ($p == 2)
     include_once 'consignment.php';
-elseif ($p==3)
+elseif ($p == 3)
     include_once 'signin.php';
-elseif ($p==31)
+elseif ($p == 31)
     include_once 'signinaction.php';
-elseif ($_SESSION['admin'] > 0){
-    if ($p==11)
+elseif ($_SESSION['admin'] > 0) {
+    if ($p == 11)
         include_once 'candidateform.php';
-    elseif ($p==12)
+    elseif ($p == 12)
         include_once 'candidatepost.php';
-    elseif ($p==21)
+    elseif ($p == 21)
         include_once 'consignmentform.php';
-    elseif ($p==22)
+    elseif ($p == 22)
         include_once 'consignmentpost.php';
 } else {
     echo "<h3>Недостаточно прав, войдите под учетной записью администратора</h3>";
 }
 
-?>
-<p>&copy Чечко Борис Сергеевич<p>
-</body></html>
+echo "
+</div>
+<div id='footer'>
+<p>&copy Чечко Борис Сергеевич</p>
+</div>
+</body></html>";

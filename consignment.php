@@ -3,9 +3,11 @@ include_once 'function.php';
 $result=consignment();
 $numresult= $result->num_rows;
 echo
-"<table border=1>
+"<table class='table' style='width: auto'>
+<thread><tr>
 <th>Партия</th>
-<td colspan=2><a href='index.php?p=21&m=1'>Добавить</a></td>";
+<th colspan=2><a href='index.php?p=21&m=1' class='knopka' style='margin-left: 27%'>Добавить</a></th>
+</tr></thread>";
 for ($i=0;$i<$numresult;$i++)
 {
     $row=$result->fetch_assoc();
@@ -13,12 +15,12 @@ for ($i=0;$i<$numresult;$i++)
     $consignment=$row['consignment'];
     $i1=$i+1;
     echo
-    "<tr><td>$consignment</td>
-<td><a
-href='index.php?p=21&m=2&id=$idconsignment'>Изменить</a></td>
-<td><a
-href='index.php?p=21&m=3&id=$idconsignment'>Удалить</a></td>";
+    "<tbody><tr/><td>$consignment</td>
+<th><a
+href='index.php?p=21&m=2&id=$idconsignment' class='knopka'>Изменить</a></th>
+<th><a
+href='index.php?p=21&m=3&id=$idconsignment' class='knopka'>Удалить</a></th>";
 }
 echo
-"</table>
+"</tbody></table>
 <p>Количество записей - $numresult<p>";

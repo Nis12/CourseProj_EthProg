@@ -7,13 +7,12 @@ if ($m==1)
 <form action='index.php' method=post>
 <input type='hidden' name='m' value=1>
 <input type='hidden' name='p' value=22>
-<table border=0>
+<table class='table'>
 <tr>
 <th>Партия</th>
-<td><input type='text' name='consignment'></td>
+<td><input type='text' class='form-control' name='consignment'></td>
 </tr>
-<tr><td colspan=2 align=center><input type='submit' value='
-Сохранить'></td>
+<tr><td colspan=2 align=center><button type='submit' class='submit'>Сохранить</button></td>
 </tr>
 </table>
 </form>";
@@ -29,14 +28,13 @@ if ($m==2)
 <input type='hidden' name='m' value=2>
 <input type='hidden' name='id' value=$idconsignment>
 <input type='hidden' name='p' value=22>
-<table border=0>
+<table class='table'>
 <tr>
 <th>Партия</th>
-<td><input type='text' name='consignment' value='$consignment'></td>
+<td><input type='text' class='form-control' name='consignment' value='$consignment'></td>
 </tr>
 <tr>
-<td colspan=2 align=center><input type='submit' value='
-Сохранить'></td>
+<td colspan=2 align=center><button type='submit' class='submit'>Сохранить</button></td>
 </tr>
 </table>
 </form>";
@@ -45,17 +43,14 @@ if ($m==3)
 {
     $idconsignment=$_REQUEST['id'];
 
-    echo "<h2>Удалить партию</h2>
+    echo "<h2>Удалить партию?</h2>
 <form action='index.php' method=post>
 <input type='hidden' name='m' value=3>
 <input type='hidden' name='id' value=$idconsignment>
 <input type='hidden' name='p' value=22>
-<table border=0>
+<table class='table'>
 <tr>
-<th>Удалить данные о группе?</th>
-</tr>
-<tr>
-<td align=center><input type='submit' value='Да'></td>
+<td align=center><button type='submit' class='submit'>Да</button></td>
 </tr>
 </table>
 </form>";

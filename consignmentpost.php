@@ -6,7 +6,7 @@ if ($m==1)
     $consignment=$_REQUEST['consignment'];
     if (empty($consignment))
     {
-        echo "<h3>Введены НЕ все данные</h3>" ;
+        echo "<h3>Введены НЕ все данные</h3>";
     }
     else
     {
@@ -20,7 +20,7 @@ if ($m==2)
     $consignment=$_REQUEST['consignment'];
     if (empty($consignment))
     {
-        echo "<h3>Введены НЕ все данные</h3>" ;
+        echo "<h3>Введены НЕ все данные</h3>";
     }
     else
     {
@@ -33,4 +33,3 @@ if ($m==2)
     consignmentdel($idconsignment);
     echo "<script>location.href='index.php?p=2'</script>";
 }
-?>

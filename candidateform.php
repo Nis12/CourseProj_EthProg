@@ -7,26 +7,28 @@ if ($m==1)
 <form action='index.php' method=post>
 <input type='hidden' name='m' value=1>
 <input type='hidden' name='p' value=12>
-<table border=0>
+<table class='table'>
 <tr>
 <th>ФИО кандидата</th>
-<td><input type='text' name='fiocandidate'></td>
+<td><input type='text' class='form-control' name='fiocandidate'></td>
 </tr>
 <tr>
 <th>Должность</th>
-<td><input type='text' name='position'></td>
+<td><input type='text' class='form-control' name='position'></td>
 </tr>
 <tr>
 <th>Возраст</th>
-<td><input type='text' name='age'></td>
+<td><input type='text' class='form-control' class='form-control' name='age'></td>
 </tr>
 <tr>
 <th>В браке</th>
 <td>
-<select name='married'><option value='0'>Нет</option><option value='1'>Да</option></select></td>
+<label class='radio-inline'><input type='radio' value='0' name='married' checked>Нет</label>
+<label class='radio-inline'><input type='radio' value='1' name='married'>Да</label>
+</td>
 </tr>
 <th>Партия</th><td>
-<select name='idconsignment'>
+<select class='form-control' name='idconsignment'>
 <option selected value='0'>Не выбрано</option>";
     $result=consignment();
     $numresult= consignment()->num_rows;
@@ -41,7 +43,7 @@ if ($m==1)
     echo
     "</select></td></tr>
 <tr>
-<td colspan=2 align=center><input type='submit' value='Сохранить'></td>
+<td colspan=2 align=center><button class='submit' type='submit' >Сохранить</button></td>
 </tr>
 </table>
 </form>";
@@ -61,32 +63,38 @@ if ($m==2)
 <input type='hidden' name='m' value=2>
 <input type='hidden' name='id' value=$idcandidate>
         <input type='hidden' name='p' value=12>
-<table border=0>
+<table class='table'>
 <tr>
 <th>ФИО кандидата</th>
-<td><input type='text' name='fiocandidate' value='$fiocandidate'></td>
+<td><input type='text' class='form-control' name='fiocandidate' value='$fiocandidate'></td>
 </tr>
 <tr>
 <th>Должность</th>
-<td><input type='text' name='position' value='$position'></td>
+<td><input type='text' class='form-control' name='position' value='$position'></td>
 </tr>
 <tr>
 <th>Возраст</th>
-<td><input type='text' name='age' value=$age></td>
+<td><input type='text' class='form-control' name='age' value=$age></td>
 </tr>
 <tr>
 <th>В браке</th>
 <td>";
    if ($married) {
-       echo "<select name='married'><option value='1'>Да</option><option value='0'>Нет</option></select>";
+       echo "
+<label class='radio-inline'><input type='radio' value='0' name='married'>Нет</label>
+<label class='radio-inline'><input type='radio' value='1' name='married' checked>Да</label>
+";
    } else {
-       echo "<select name='married'><option value='0'>Нет</option><option value='1'>Да</option></select>";
+       echo "
+<label class='radio-inline'><input type='radio' value='0' name='married' checked>Нет</label>
+<label class='radio-inline'><input type='radio' value='1' name='married'>Да</label>
+";
    }
     echo
     "</td>
 </tr>
 <th>Партия</th><td>
-<select name='idconsignment'>
+<select class='form-control' name='idconsignment'>
 <option value='0'>Не выбрано</option>";
     $result=consignment();
     $numresult= consignment()->num_rows;
@@ -103,7 +111,7 @@ if ($m==2)
     echo
     "</select></td></tr>
 <tr>
-<td colspan=2 align=center><input type='submit' value='Сохранить'></td>
+<td colspan=2 align=center><button type='submit' class='submit'>Сохранить</button></td>
 </tr>
 </table>
 </form>";
@@ -111,17 +119,14 @@ if ($m==2)
 if ($m==3)
 {
     $idcandidate=$_REQUEST['id'];
-    echo "<h2>Удалить кандидата</h2>
+    echo "<h2>Удалить кандидата?</h2>
 <form action='index.php' method=post>
 <input type='hidden' name='m' value=3>
 <input type='hidden' name='id' value=$idcandidate>
 <input type='hidden' name='p' value=12>
-<table border=0>
+<table class='table'>
 <tr>
-<th>Удалить данные о кандидате?</th>
-</tr>
-<tr>
-<td align=center><input type='submit' value='Да'></td>
+<td align=center><button type='submit' class='submit'>Да</button></td>
 </tr>
 </table>
 </form>";

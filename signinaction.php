@@ -11,19 +11,18 @@ if ($in == 0) {
         $encRes = $user['encresult'];
         if (password_verify($pass, $encRes)) {
             session_start();
-            if (!isset($_SESSION['admin'])) {
-                $_SESSION['admin'] = 0;
-            } else {
-                $_SESSION['admin']++;
-            }
+            $_SESSION['admin']++;
             echo "<h3>Вход выполнен</h3>";
+            echo "<script>location.href='index.php?p=1'</script>";
         } else echo "<h3>Не верный пароль</h3>";
     } else {
         echo "<h3>Логин не найден</h3>";
+        echo "<script>location.href='index.php?p=3'</script>";
     }
 } elseif ($in == 1) {
     unset($_SESSION['admin']);
     echo "<h3>Выход выполнен</h3>";
+    echo "<script>location.href='index.php?p=1'</script>";
 }
 
 function encrypt($decRes, $pass) {
