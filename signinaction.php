@@ -23,6 +23,8 @@ if ($in == 0) {
     unset($_SESSION['admin']);
     echo "<h3>Выход выполнен</h3>";
     echo "<script>location.href='index.php?p=1'</script>";
+} elseif ($in == 2) {
+
 }
 
 function encrypt($decRes, $pass) {

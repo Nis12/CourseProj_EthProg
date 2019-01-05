@@ -22,15 +22,16 @@ echo "
 </div>
 <div id='left'>
 <ul>
-<li><p/> <a href='index.php?p=1' class='menu'>Кандидаты</a></li>
-<li><p/> <a href='index.php?p=2' class='menu'>Партии</a></li>";
+<li><p/><a href='index.php?p=1' class='menu'>Кандидаты</a></li>
+<li><p/><a href='index.php?p=2' class='menu'>Партии</a></li>";
 if ($_SESSION['admin'] > 0) {
-    echo "<li><p/><a href='index.php?p=3&in=1' class='menu'>Выйти</a></li>";
+    echo "
+<li><p/><a href='index.php?p=3&in=1' class='menu'>Выйти</a></li>
+<hr><p class='admin'>Администратор</p>";
 } else {
     echo "<li><p/><a href='index.php?p=3&in=0' class='menu'>Войти</a></li>";
 }
 echo "</ul>";
-if ($_SESSION['admin'] > 0) echo "<hr><p class='admin'>Режим администратора</p>";
 
 echo "</div><div id='mid' >";
 $p = $_REQUEST['p'];
@@ -51,12 +52,9 @@ elseif ($_SESSION['admin'] > 0) {
         include_once 'consignmentform.php';
     elseif ($p == 22)
         include_once 'consignmentpost.php';
-} else {
+} else
     echo "<h3>Недостаточно прав, войдите под учетной записью администратора</h3>";
-}
-
-echo "
-</div>
+echo "</div>
 <div id='footer'>
 <p>&copy Чечко Борис Сергеевич</p>
 </div>

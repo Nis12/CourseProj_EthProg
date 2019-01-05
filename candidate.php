@@ -11,8 +11,10 @@ echo
 <th>ФИО кандидата</th>
 <th>Должность</th>
 <th>Возраст</th>
-<th>В браке</th>
-<th colspan=2><a href='index.php?p=11&m=1' class='knopka' style='margin-left: 27%'>Добавить</a></th>
+<th>В браке</th>";
+if ($_SESSION['admin'] > 0) echo "
+<th colspan=2><a href='index.php?p=11&m=1' class='knopka' style='margin-left: 27%'>Добавить</a></th>";
+echo "
 </tr>
 </thread>
 <tbody>";
@@ -35,7 +37,7 @@ for ($i=0;$i<$numresult;$i++)
 <td>$age</td>
 <td>";
 if ($married) echo "Да"; else echo "Нет";
-echo
+    if ($_SESSION['admin'] > 0) echo
 "</td>
 <th><a href='index.php?p=11&id=$idcandidate&m=2' class='knopka'>Изменить</a></th>
 <th><a href='index.php?p=11&id=$idcandidate&m=3' class='knopka'>Удалить</a></th>";

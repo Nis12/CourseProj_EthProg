@@ -119,3 +119,16 @@ function admins($login)
     $result = $handle->query($query);
     return $result;
 }
+function adminins($login, $pass)
+{
+    $query =
+        "INSERT INTO administrator (login, encresult) VALUES ('$login', $pass)";
+    $handle = dbconnect();
+    $handle->query($query);
+}
+function admindel ($idadmin){
+    $query =
+        "DELETE FROM administrator WHERE idadministrator=$idadmin";
+    $handle=dbconnect();
+    $handle->query($query);
+}
