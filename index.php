@@ -8,7 +8,6 @@ echo "
     <title>Информация о кандидатах</title>
     
     <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css'>
-    <script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js'></script>
    <link rel='stylesheet' href='styles.css' type='text/css'>
     
 </head>
@@ -32,8 +31,8 @@ if ($_SESSION['admin'] > 0) {
     echo "<li><p/><a href='index.php?p=3&in=0' class='menu'>Войти</a></li>";
 }
 echo "</ul>";
+echo "</div><div id='mid' class='container'>";
 
-echo "</div><div id='mid' >";
 $p = $_REQUEST['p'];
 if (($p == 0) || ($p == 1))
     include_once 'candidate.php';

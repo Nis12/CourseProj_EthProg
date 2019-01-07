@@ -8,7 +8,7 @@ echo
 <thread><tr>
 <th>Партия</th>";
 if ($_SESSION['admin'] > 0) echo "
-<th colspan=2><a href='index.php?p=21&m=1' class='knopka' style='margin-left: 27%'>Добавить</a></th>
+<th colspan=2><a href='index.php?p=21&m=1' class='button' style='margin-left: 27%'>Добавить</a></th>
 </tr></thread>";
 for ($i=0;$i<$numresult;$i++)
 {
@@ -21,9 +21,9 @@ for ($i=0;$i<$numresult;$i++)
     if ($_SESSION['admin'] > 0)
     echo "
 <th><a
-href='index.php?p=21&m=2&id=$idconsignment' class='knopka'>Изменить</a></th>
+href='index.php?p=21&m=2&id=$idconsignment' class='button'>Изменить</a></th>
 <th><a
-href='index.php?p=21&m=3&id=$idconsignment' class='knopka'>Удалить</a></th>";
+href='index.php?p=21&m=3&id=$idconsignment' class='button'>Удалить</a></th>";
 }
 echo
 "</tbody></table>
