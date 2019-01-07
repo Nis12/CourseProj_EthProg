@@ -6,13 +6,10 @@ echo "
 <head>
     <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">
     <title>Информация о кандидатах</title>
-    
     <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css'>
-   <link rel='stylesheet' href='styles.css' type='text/css'>
-    
+    <link rel='stylesheet' href='styles.css' type='text/css'>
 </head>
 <body>
-
 <div id = 'wrap'>
  <header>
  <h1>Информация о предвыборной компании</h1>
@@ -55,6 +52,6 @@ elseif ($_SESSION['admin'] > 0) {
     echo "<h3>Недостаточно прав, войдите под учетной записью администратора</h3>";
 echo "</div>
 <div id='footer'>
-<p>&copy Чечко Борис Сергеевич</p>
+<p>&copy Чечко Борис Сергеевич 2018</p>
 </div>
 </body></html>";

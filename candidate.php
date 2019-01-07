@@ -43,4 +43,4 @@ if ($married) echo "Да"; else echo "Нет";
 <th><a href='index.php?p=11&id=$idcandidate&m=3' class='button'>Удалить</a></th>";
 }
 echo "</tr></tbody></table>
-<p>Количество записей - $numresult";
+<p style='padding-bottom: 15px'>Количество записей - $numresult</p>";

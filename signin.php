@@ -12,7 +12,7 @@ echo "
 </tr>
 <tr>
 <th>Пароль: </th>
-<td><input type='text' class='form-control' name='password'></td>
+<td><input type='password' class='form-control' name='password'></td>
 </tr>
 <tr>
 <td colspan=2 align=center><button type='submit' class='submit'>Войти</button></td>
